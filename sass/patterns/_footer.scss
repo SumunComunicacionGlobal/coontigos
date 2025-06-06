@@ -1,0 +1,31 @@
+@use '../abstracts/mixins' as *;
+
+#colophon {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+
+    @media ($below-mobile) {    
+        .has-display-font-size {
+            font-size: 3.5rem !important;
+        }
+        .has-subtitle-font-size {
+            font-size: 1.25rem !important;
+        }
+    }
+    
+    .wp-block-social-link.wp-social-link {
+        width: 4.5rem;
+        height: 4.5rem;
+        display: flex;
+        justify-content: center;
+        border-radius: var(--wp--custom--border-radius--rounded);
+        border: 1px solid;
+    }
+
+    .safe-svg-cover .safe-svg-inside {
+        display: block;
+    }
+}

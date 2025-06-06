@@ -1,0 +1,157 @@
+@use '../abstracts/mixins' as *;
+
+.is-style-group-horizontal-scroll, .is-style-group-horizontal-scroll-btns {
+    padding: var(--wp--custom--layout--block-gap);
+    gap: var(--wp--custom--layout--block-gap);
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-inline: contain;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    will-change: transform;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &.active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        user-select: none;
+    }
+
+    & > .wp-block-group, & > .wc-block-product, & > .wp-block-gallery, & > [class*="wp-block-"] {
+        flex: 0 0 auto !important;
+        max-width: 386px !important;
+        margin-block-start: 0;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+
+        @media ($below-mobile-xs) {
+            max-width: 256px !important;
+        }
+    }
+
+    &.alignfull {
+        padding-left: calc(var(--wp--style--root--padding-left) + 16.6%);
+
+        @media ($below-mobile) {
+            padding-left: var(--wp--style--root--padding-left);
+        }
+
+        .horizontal-scroll--container {
+            margin-right: calc(var(--wp--style--root--padding-right) * -1);
+            margin-left: calc(var(--wp--style--root--padding-left) * -1);
+        }
+
+    }
+    
+}
+
+.wp-block-group.is-layout-grid {
+    @media ($below-mobile) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wp-block-group.is-position-sticky {
+    top: calc(var(--wp--custom--layout--block-gap) + var(--wp-admin--admin-bar--position-offset, 0px))
+}
+
+.wp-block-timeline {
+    column-gap: var(--wp--custom--layout--block-gap);
+    row-gap: 0;
+
+    @media ($below-mobile) {
+        row-gap: var(--wp--custom--layout--block-gap);
+
+        .wp-block-timeline--year {
+
+            p.has-text-align-right {
+                text-align: left;
+            }
+        }
+    }
+
+    .wp-block-timeline--year {
+        p {
+            padding-right: var(--wp--preset--spacing--40);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background-color: var(--wp--preset--color--primary-90);
+            @media ($below-mobile) {
+                width: 100%;
+                height: 1px;
+                top: 100%;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            right: -0.25rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: var(--wp--preset--color--primary-90);
+            border-radius: var(--wp--custom--border-radius--rounded);
+             @media ($below-mobile) {
+                top: 2.33rem
+            }
+        }
+
+        &.wp-block-timeline--year-last {
+            &::before {
+                top: 0;
+                height: 1rem;
+
+                 @media ($below-mobile) {
+                    top: 2.5rem;
+                    height: 1px;
+                }
+            }
+        }
+    }
+}
+
+
+.scrolling-button-container {
+    display: flex;
+    gap: var(--wp--preset--spacing--10);
+    justify-content: flex-end;
+    overflow-x: hidden;
+    margin-block-start: 0;
+
+    .scrolling-button {
+        border-radius: var(--wp--custom--border-radius--rounded);
+        background-color: var(--wp--preset--color--primary);
+        color: var(--wp--preset--color--white);
+        width: var(--wp--preset--spacing--40);
+        height: var(--wp--preset--spacing--40);
+        border: none;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: var(--wp--preset--color--primary-100);
+        }
+
+        &:disabled {
+            background-color: var(--wp--preset--color--neutral-40);
+        }
+    }
+}
+
+.wp-block-group.has-secondary-transparent-background-color {
+    backdrop-filter: blur(8px);
+}

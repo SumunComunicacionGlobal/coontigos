@@ -1,0 +1,17 @@
+#masthead {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    transition: transform 0.3s ease-in-out;
+
+    & > .wp-block-group {
+        transition: transform 0.3s ease-in-out;
+        border-bottom: 1px solid;
+    }
+
+    .scrolled & {
+
+        transform: translateY(-102px);
+    }
+
+}

@@ -1,0 +1,70 @@
+/*!
+Theme Name: Coontigos
+Theme URI: https://sumun.net
+Author: coontigos
+Author URI: https://sumun.net
+Description: Coontigos Full Site Editing Theme
+Version: 2.0.0
+Tested up to: 8.2
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: coontigos
+Tags: full site editing, sass, 
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@use "vendor/normalize";
+
+
+/*--------------------------------------------------------------
+# Abstracts
+--------------------------------------------------------------*/
+@use "abstracts/mixins";
+
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@use "base/typography";
+@use "base/spacer";
+@use "base/layout";
+@use "base/fields";
+@use "base/forms";
+@use "base/utilities";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@use "components/buttons";
+@use "components/breadcrumbs";
+@use "components/cards";
+@use "components/carousel";
+@use "components/cover";
+@use "components/details";
+@use "components/faqs";
+@use "components/group";
+@use "components/lists";
+@use "components/marquee";
+@use "components/media-text";
+@use "components/nav";
+@use "components/pagination";
+@use "components/query";
+@use "components/quote";
+@use "components/search";
+
+
+/*--------------------------------------------------------------
+# Patterns & Pages
+--------------------------------------------------------------*/
+@use "patterns/header";
+@use "patterns/hero";
+@use "patterns/homepage";
+@use "patterns/blog";
+@use "patterns/footer";

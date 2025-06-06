@@ -1,0 +1,45 @@
+.rank-math-list {
+    display: grid;
+    gap: 0.5rem;
+
+    .rank-math-list-item {
+        border-bottom: 1px solid;
+
+        .rank-math-question {
+            position: relative;
+            width: 100%;
+            margin-bottom: 1rem;
+            
+            &:hover {
+                cursor: pointer;
+            }
+            
+            &::after {
+                content: url(./assets/icons/chevron-down.svg);
+                right: 0;
+                top: 0;
+                position: absolute;
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+
+        .rank-math-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease-in-out;
+            
+        }
+
+        &.active {
+
+            .rank-math-answer {
+                max-height: 100vh;
+            }
+    
+            .rank-math-question::after {
+                content: url(./assets/icons/chevron-up.svg);
+            }
+        }
+    }
+}

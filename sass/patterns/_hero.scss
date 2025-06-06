@@ -1,0 +1,44 @@
+@use '../abstracts/mixins' as *;
+
+#hero {
+    position: relative;
+    //height: 880px;
+
+    @media ($below-mobile) {
+        padding: 8rem 1.5rem 2rem 1.5rem;
+    }
+}
+
+
+#hero-video {
+    position: relative;
+
+    .wp-block-group:not(.toggle-sound-video) {
+        position: absolute;
+        bottom: 72px;
+        width: 100%;
+        right: 0;
+        left: 0;
+
+        .toggle-sound-video {
+
+            border-radius: var(--wp--custom--border-radius--md, 8px);
+            background: rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            padding: var(--wp--preset--spacing--20, 24px);
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            p {
+                border-radius: var(--wp--custom--border-radius--md, 8px);
+                background: rgba(167, 163, 163, 0.20);
+                padding: var(--wp--preset--spacing--10, 16px) var(--wp--preset--spacing--20, 24px);
+            }
+
+        }
+
+    }
+    
+}
