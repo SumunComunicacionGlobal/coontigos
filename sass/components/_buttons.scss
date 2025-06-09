@@ -1,7 +1,10 @@
-.wp-block-buttons .wp-block-button:not([class*="-with-arrow"]) .wp-block-button__link {
-	transition: transform 0.3s ease;
+
+
+.wp-block-buttons .wp-block-button:not([class*="-with-arrow"]) .wp-block-button__link:not(.has-background) {
+	transition: background-color 0.3s ease;
 	&:hover {
-		transform: scale(1.1);
+		background-color: var(--wp--preset--color--secondary-80);
+		color: var(--wp--custom--color--neutral-white);
 	}
 }
 

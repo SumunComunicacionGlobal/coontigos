@@ -133,3 +133,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
+// Tabs Team// Tabs Team
+document.addEventListener('DOMContentLoaded', function() {
+    const btnPsicologos = document.getElementById('psicologos-btn');
+    const btnColaboradores = document.getElementById('colaboradores-btn');
+    const tabPsicologos = document.getElementById('psicologos');
+    const tabColaboradores = document.getElementById('colaboradores');
+
+    if (!btnPsicologos || !btnColaboradores || !tabPsicologos || !tabColaboradores) return;
+
+    function showTab(tabToShow, tabToHide, btnToDisable, btnToEnable) {
+        tabToShow.classList.add('tab-active');
+        tabToShow.classList.remove('tab-inactive');
+        tabToHide.classList.remove('tab-active');
+        tabToHide.classList.add('tab-inactive');
+        btnToDisable.disabled = true;
+        btnToEnable.disabled = false;
+    }
+
+    // Estado inicial
+    tabPsicologos.classList.add('tab-active');
+    tabColaboradores.classList.add('tab-inactive');
+    btnPsicologos.disabled = true;
+    btnColaboradores.disabled = false;
+
+    btnPsicologos.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (!btnPsicologos.disabled) {
+            showTab(tabPsicologos, tabColaboradores, btnPsicologos, btnColaboradores);
+        }
+    });
+
+    btnColaboradores.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (!btnColaboradores.disabled) {
+            showTab(tabColaboradores, tabPsicologos, btnColaboradores, btnPsicologos);
+        }
+    });
+});

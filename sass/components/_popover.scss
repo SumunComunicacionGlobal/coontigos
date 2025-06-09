@@ -1,0 +1,45 @@
+[popover] {
+    transition: opacity 0.2s ease-in-out, display 0.2s allow-discrete;
+    opacity: 0;
+  
+    &:popover-open {
+        opacity: 1;
+        transform: none;
+  
+        @starting-style {
+            & {
+            opacity: 0;
+            
+            }
+        }
+    }
+}
+
+button.wp-block-popover--button[popovertarget] {
+    border: 0;
+    border-radius: var(--wp--custom--border-radius--rounded);
+    background: rgba(255, 255, 255, 0.20);
+    color: var(--wp--preset--color--foreground);
+    font-size: 32px;
+    line-height: 1;
+    height: 2.5rem;
+    width: 2.5rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.wp-block-popover--content {
+    inset: auto;
+    background-color: rgba(255, 255, 255, 0.20);
+    color: var(--wp--preset--color--foreground);
+    border: 0;
+    border-radius: var(--wp--custom--border-radius--md);
+    top: anchor(top);
+    right: calc( anchor(left) + 32px);
+    max-width: 300px;
+    margin-top: 0 !important;
+    padding: 0 1rem;
+
+}

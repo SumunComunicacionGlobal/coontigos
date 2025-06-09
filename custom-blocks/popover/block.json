@@ -1,0 +1,26 @@
+{
+  "apiVersion": "2",
+  "name": "acf/popover",
+  "title": "Popover",
+  "category": "design",
+  "icon": "admin-comments",
+  "description": "Un bloque personalizado que permite la inserción de bloques anidados dentro de un popover con control de posición.",
+  "acf": {
+      "mode": "preview",
+      "renderTemplate": "popover.php"
+  },
+  
+  "attributes": {
+    "position": {
+      "type": "string",
+      "default": "top"
+    }
+  },
+  "supports": {
+    "align": true,
+    "anchor": true,
+    "jsx": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css"
+}
