@@ -2,16 +2,22 @@
     position: fixed;
     width: 100%;
     z-index: 99;
-    transition: transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 
     & > .wp-block-group {
-        transition: transform 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
         border-bottom: 1px solid;
     }
 
     .scrolled & {
+        background-color: var(--wp--preset--color--secondary-transparent);
+        backdrop-filter: blur(8px);
 
-        transform: translateY(-102px);
+        & > .wp-block-group {
+            border-bottom: 0;
+            padding-top: var(--wp--preset--spacing--10) !important;
+            padding-bottom: var(--wp--preset--spacing--10) !important;
+        }
     }
 
 }

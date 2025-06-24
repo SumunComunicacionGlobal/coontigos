@@ -13,6 +13,23 @@
 #hero-video {
     position: relative;
 
+    @media ($below-desktop) {
+    .wp-block-cover__video-background {
+            object-fit: contain !important;
+            object-position: 100% 99px;
+        }
+    }
+
+    @media ($below-tablet) {
+        min-height: 560px !important;
+        .wp-block-cover__video-background {
+            object-position: 100% 90px;
+        }
+        .wp-block-cover__inner-container {
+            transform: translateY(112px);
+        }
+    }
+
     .wp-block-group:not(.toggle-sound-video) {
         position: absolute;
         bottom: 72px;

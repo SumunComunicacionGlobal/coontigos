@@ -115,3 +115,11 @@ main {
         right: calc(100% + 1rem);
     }
 }
+
+.bg-home-group {
+    @media ($below-mobile) {
+        background-size: auto !important;
+        background-repeat: no-repeat !important;
+        background-position: 46.66% 100% !important;
+    } 
+}

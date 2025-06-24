@@ -2,7 +2,7 @@
 
 
 .btn-menu {
-    @media ($above-mobile) {
+    @media ($above-tablet) {
         border-radius: var(--wp--custom--border-radius--md);
         border: 1px solid;
 
@@ -21,7 +21,7 @@
     .wp-block-navigation__container {
         li.has-small-font-size.wp-block-navigation-item {
             
-            @media ($below-mobile) {
+            @media ($below-tablet) {
                 font-size: var(--wp--preset--font-size--heading-2) !important;
                 font-weight: 100;
             } 
@@ -33,4 +33,24 @@
     }
 }
 
+
+@media ($below-tablet) {
+  .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+    background-color: inherit;
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: auto;
+  }
+
+  .wp-block-navigation__responsive-container.is-menu-open {
+    height: 100dvh;
+  }
+}
+
+@media ($below-tablet) {
+  .wp-block-navigation__responsive-container-open:not(.always-shown) {
+    display: block;
+  }
+}
 

@@ -32,12 +32,13 @@ button.wp-block-popover--button[popovertarget] {
 
 .wp-block-popover--content {
     inset: auto;
-    background-color: rgba(255, 255, 255, 0.20);
+    background-color: var(--wp--preset--color--background);
     color: var(--wp--preset--color--foreground);
+    box-shadow: var(--wp--custom--box-shadow--2);
     border: 0;
     border-radius: var(--wp--custom--border-radius--md);
     top: anchor(top);
-    right: calc( anchor(left) + 32px);
+    left: anchor(left);
     max-width: 300px;
     margin-top: 0 !important;
     padding: 0 1rem;
