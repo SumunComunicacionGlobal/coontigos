@@ -13,31 +13,9 @@
 #hero-video {
     position: relative;
 
-    @media ($below-desktop) {
-    .wp-block-cover__video-background {
-            object-fit: contain !important;
-            object-position: 100% 99px;
-        }
-    }
+    .wp-block-group:not(.toggle-sound-video, .toggle-play-video) {
 
-    @media ($below-tablet) {
-        min-height: 560px !important;
-        .wp-block-cover__video-background {
-            object-position: 100% 90px;
-        }
-        .wp-block-cover__inner-container {
-            transform: translateY(112px);
-        }
-    }
-
-    .wp-block-group:not(.toggle-sound-video) {
-        position: absolute;
-        bottom: 72px;
-        width: 100%;
-        right: 0;
-        left: 0;
-
-        .toggle-sound-video {
+        .toggle-sound-video, .toggle-play-video {
 
             border-radius: var(--wp--custom--border-radius--md, 8px);
             background: rgba(0, 0, 0, 0.15);
@@ -48,10 +26,24 @@
                 cursor: pointer;
             }
 
-            p {
+            p, a {
                 border-radius: var(--wp--custom--border-radius--md, 8px);
                 background: rgba(167, 163, 163, 0.20);
                 padding: var(--wp--preset--spacing--10, 16px) var(--wp--preset--spacing--20, 24px);
+            }
+
+            a.vp-a {
+                display: flex;
+                align-items: center;
+
+                &::before {
+                    content: url(./assets/icons/icon-play.svg);
+                    width: 24px;
+                    height: 24px;
+                    display: inline-block;
+                    margin-right: 0.5rem;
+                }
+                
             }
 
         }
