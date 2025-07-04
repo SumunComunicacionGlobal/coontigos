@@ -37,10 +37,22 @@ button.wp-block-popover--button[popovertarget] {
     box-shadow: var(--wp--custom--box-shadow--2);
     border: 0;
     border-radius: var(--wp--custom--border-radius--md);
-    top: anchor(top);
-    left: anchor(left);
     max-width: 300px;
     margin-top: 0 !important;
     padding: 0 1rem;
+    max-height: 540px;
+    overflow: auto;
 
+}
+
+.wp-block-popover--content {
+    /* Fallback para navegadores sin anchor() */
+    top: 2rem;
+    left: 2rem;
+
+    /* Si el navegador soporta anchor(), lo usará */
+    @supports (top: anchor(top)) {
+        top: anchor(top);
+        left: anchor(left);
+    }
 }

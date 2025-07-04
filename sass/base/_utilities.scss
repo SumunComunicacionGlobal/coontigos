@@ -17,7 +17,14 @@ a.stretched-link, .stretched-link > a {
 }
 
 .column-reverse-mobile {
-    @media ($below-tablet) {
+    @media ($below-mobile) {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+}
+
+.column-reverse-mobile-xs {
+    @media ($below-mobile-xs) {
         flex-direction: column-reverse;
         display: flex;
     }
