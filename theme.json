@@ -349,12 +349,12 @@
 				},
 				{
 					"name": "H1",
-					"size": "clamp(3rem, 4.8vw, 3.375rem)",
+					"size": "clamp(2.6rem, 4.8vw, 3.375rem)",
 					"slug": "heading-1"
 				},
 				{
 					"name": "H2",
-					"size": "clamp(2.5rem, 4.8vw, 3rem)",
+					"size": "clamp(2.33rem, 4.8vw, 3rem)",
 					"slug": "heading-2"
 				},
 				{
