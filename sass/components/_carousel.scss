@@ -12,7 +12,7 @@
 
     .slick-next, .slick-prev {
         top: calc(100% + 1rem);
-        color: var(--wp--preset--color--neutral-white);
+        color: var(--wp--preset--color--neutral-white) !important;
         width: 3.5rem;
         height: 3.5rem;
         z-index: 2;
@@ -60,5 +60,5 @@
 }
 
 .wp-block-cb-carousel .slick-next:before, .wp-block-cb-carousel .slick-prev:before {
-    color: var(--wp--preset--color--neutral-white);
+    color: var(--wp--preset--color--neutral-white) !important;
 }
