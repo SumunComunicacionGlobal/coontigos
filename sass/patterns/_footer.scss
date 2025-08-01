@@ -17,11 +17,28 @@
     }
 
     .footer-contact-box {
-            a {
-                width: 100%;
-                display: block;
-                text-decoration: none;
+        a {
+            width: 100%;
+            display: block;
+            text-decoration: none;
+
+            &:after {
+                content: '';
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                margin-left: .5rem;
+                background-color: currentColor; /* Esto asegura que el color del SVG coincida con el color del texto */
+                mask-image: url(./assets/icons/icon-arrow-btn.svg);
+                mask-size: cover;
+                mask-repeat: no-repeat;
+                transition: transform 0.3s ease-in-out;
+                right: 0;
+                position: absolute;
+                top: 6px;
             }
+
+        }
     }
     
     .wp-block-social-link.wp-social-link {
