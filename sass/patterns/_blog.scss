@@ -1,6 +1,11 @@
 @use '../abstracts/mixins' as *;
 
 .filter-by {
+    
+    @media ($below-tablet) {
+        margin-top: 0 !important;
+    }
+
     .wp-block-categories-list {
         list-style: none;
         display: flex;
@@ -11,19 +16,29 @@
         @media ($below-tablet) {
             flex-direction: column;
             flex-basis: 100%;
-            gap: 1rem;
-            max-height: 50dvh;
-            opacity: 1;
             transition: .5s ease-in-out;
+        }
+
+        li {
+            display: flex;
+            @media ($below-tablet) {
+                align-items: center;
+                justify-content: center;
+            }
         }
 
         a {
             text-decoration: none;
-            border-radius: var(--wp--custom--border-radius--rounded);
-            border: 1px solid;
-            padding: .5rem 1rem;
-            color: var(--wp--preset--color--secondary-80);
-            transition: transform 0.3s ease;
+            background-color: var(--wp--preset--color--secondary);
+            color: var(--wp--preset--color--primary);
+            border-radius: var(--wp--custom--border-radius--md);
+            padding: calc(1rem - 1.5px) 2rem;
+            transition: 0.3s ease;
+
+            @media ($below-tablet) {
+                width: 100%;
+                text-align: center;
+            }
 
             &:after {
                 content: none;
@@ -31,24 +46,30 @@
 
             &:hover {
                 transform: scale(1.1);
+                background-color: var(--wp--preset--color--secondary-80);
+                color: var(--wp--custom--color--neutral-white);
             }
         }
     }
 
     @media ($below-tablet) {
-        &.filter-by--is-open {
-            .wp-block-categories-list {
-                max-height: 0;
-                opacity: 0;
-                transition: .5s ease-in-out;
-                margin-bottom: var(--wp--preset--spacing--40);
-            }
-
-            .toggle-filter-by img {
-                transform: rotate(90deg);
-                transition: .5s ease-in-out;
+       
+        .wp-block-categories-list {
+            max-height: 0;
+            opacity: 0;
+            
+            &.filter-by--is-open {
+                max-height: 50dvh;
+                opacity: 1 !important; 
+                margin-top: 2rem !important;
             }
         }
+
+        .toggle-filter-by img {
+            transform: rotate(90deg);
+            transition: .5s ease-in-out;
+        }
+        
     }
 }
 

@@ -171,3 +171,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Filter by Category
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.toggle-filter-by');
+    const filterBy = document.querySelector('.filter-by .wp-block-categories-list');
+
+    if (!toggle || !filterBy) return;
+
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        filterBy.classList.toggle('filter-by--is-open');
+    });
+});

@@ -39,35 +39,6 @@
     }
 }
 
-
-.wp-block-categories-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: .5rem;
-    flex-wrap: wrap;
-    
-    li.cat-item {
-        a {
-            text-decoration: none;
-            background-color: inherit;
-            border-radius: var(--wp--custom--border-radius--rounded);
-            color: var(--wp--preset--color--neutral-white);
-            padding: calc(0.5rem + 0px) 2rem;
-            transition: all 0.2s ease-in-out;
-            display: flex;
-            height: 2.5rem;
-
-            &:hover {
-                background-color: var(--wp--preset--color--terciary-50);
-                color: var(--wp--preset--color--neutral-white);
-            }
-        }
-    }
-}
-
-
 .is-style-is-related-posts .taxonomy-category.has-heading-4-font-size > a {
     color: initial;
     text-decoration: none;
