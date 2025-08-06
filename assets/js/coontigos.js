@@ -182,5 +182,6 @@ document.addEventListener('DOMContentLoaded', function() {
     toggle.addEventListener('click', function(e) {
         e.preventDefault();
         filterBy.classList.toggle('filter-by--is-open');
+        toggle.classList.toggle('toggle-filter-by--active'); // Añade/quita la clase en el botón
     });
 });

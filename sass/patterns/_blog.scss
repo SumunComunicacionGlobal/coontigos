@@ -64,12 +64,35 @@
                 margin-top: 2rem !important;
             }
         }
-
-        .toggle-filter-by img {
-            transform: rotate(90deg);
-            transition: .5s ease-in-out;
-        }
         
     }
 }
 
+@media ($below-tablet) {
+    .toggle-filter-by {
+
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-left: .5rem;
+            background-color: currentColor; /* Esto asegura que el color del SVG coincida con el color del texto */
+            mask-image: url(./assets/icons/icon-arrow-btn.svg);
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            transition: transform 0.3s ease-in-out;
+            right: 0;
+            position: absolute;
+            top: 0;
+
+            transform: rotate(90deg);
+            transition: .5s ease-in-out;
+        } 
+
+        &.toggle-filter-by--active:before {
+            transform: rotate(-90deg);
+        }
+    }
+
+}
