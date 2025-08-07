@@ -46,9 +46,9 @@ ul.is-style-check-separator-list {
 	}
 
 	li:before{
-		content: url("assets/icons/arrow-list.svg");
+		content: url("assets/icons/arrow-right.svg");
 		position: absolute;
-		top: 6px;
+		top: -6px;
 		left: 0;
 	}
 
