@@ -36,6 +36,24 @@
         }
     }
 
+    &.cards-team  {
+        & > .wp-block-cover {
+            min-width: 360px;
+
+            @media ($below-mobile-xs) {
+                min-width: 280px !important;
+            }
+
+            .wp-block-cover__inner-container {
+                align-content: end;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
     &.alignfull {
         padding-left: calc(var(--wp--style--root--padding-left) + 16.6%);
 

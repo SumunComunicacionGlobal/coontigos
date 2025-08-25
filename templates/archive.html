@@ -1,24 +1,78 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"coontigos","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"Hero"},"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-10"}}},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|60"},"padding":{"top":"14rem","bottom":"var:preset|spacing|80"},"blockGap":"var:preset|spacing|10"}},"textColor":"neutral-10","layout":{"type":"constrained"}} -->
-<section id="hero" class="wp-block-group has-neutral-10-color has-text-color has-link-color" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--60);padding-top:14rem;padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:paragraph -->
-<p>BLOG</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:query-title {"type":"archive","fontSize":"display-1"} /-->
-
-<!-- wp:term-description {"fontSize":"subtitle"} /-->
-
-<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"Hero"},"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-10"}}},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"14rem","bottom":"var:preset|spacing|80"},"blockGap":"var:preset|spacing|10"}},"textColor":"neutral-10","gradient":"blue-gradient","layout":{"type":"constrained"}} -->
+<section id="hero" class="wp-block-group has-neutral-10-color has-blue-gradient-gradient-background has-text-color has-background has-link-color" style="margin-top:0;margin-bottom:0;padding-top:14rem;padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:group {"metadata":{"name":"Breadcrumbs"},"layout":{"type":"constrained"}} -->
 <div id="breadcrumbs" class="wp-block-group"><!-- wp:shortcode -->
 [rank_math_breadcrumb]
 <!-- /wp:shortcode --></div>
-<!-- /wp:group --></section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"style":{"spacing":{"margin":{"top":"0"}}},"layout":{"type":"default"}} -->
-<main class="wp-block-group" style="margin-top:0"><!-- wp:query {"queryId":16,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":true,"taxQuery":null,"parents":[],"format":[]},"layout":{"type":"constrained"}} -->
-<div class="wp-block-query"><!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group"><!-- wp:avatar {"size":120,"style":{"border":{"radius":"999px"}}} /-->
+
+<!-- wp:query-title {"type":"archive","showPrefix":false} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:spacer {"height":"32px","className":"hidden-mobile"} -->
+<div style="height:32px" aria-hidden="true" class="wp-block-spacer hidden-mobile"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"number_colegiado","hideEmpty":true,"prefix":"Psicólogo Colegiado nº. ","labelAsPrefix":true,"displayLayout":"inline-block"} /-->
+
+<!-- wp:shortcode -->
+[acf_author_linkedin]
+<!-- /wp:shortcode --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"66.66%"} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:mfb/meta-field-block {"fieldType":"acf","fieldName":"bio_user","hideEmpty":true,"className":"bio-user-extend"} /--></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"gradient":"blue-gradient-reverse","layout":{"type":"constrained"}} -->
+<main class="wp-block-group has-blue-gradient-reverse-gradient-background has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10)"><!-- wp:columns {"verticalAlignment":"center"} -->
+<div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"41.6%","style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:41.6%"><!-- wp:group {"style":{"spacing":{"blockGap":"0.6rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group"><!-- wp:heading -->
+<h2 class="wp-block-heading">Terapias y tratamientos que realiza</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://coontigos.com/tratamientos/">Ver todos los tratamientos</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center","width":"8.33%","className":"hidden-tablet hidden-mobile"} -->
+<div class="wp-block-column is-vertically-aligned-center hidden-tablet hidden-mobile" style="flex-basis:8.33%"></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:shortcode -->
+[acf_author_tratamientos]
+<!-- /wp:shortcode --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:spacer {"height":"32px","className":"hidden-mobile"} -->
+<div style="height:32px" aria-hidden="true" class="wp-block-spacer hidden-mobile"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:query {"queryId":16,"query":{"perPage":12,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":true,"taxQuery":null,"parents":[],"format":[]},"layout":{"type":"constrained"}} -->
+<div class="wp-block-query"><!-- wp:group {"style":{"spacing":{"blockGap":"0.6rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group"><!-- wp:heading -->
+<h2 class="wp-block-heading">Publicaciones de</h2>
+<!-- /wp:heading -->
+
+<!-- wp:post-author-name {"fontSize":"heading-2"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"20rem"}} -->
 <!-- wp:block {"ref":831} /-->
 <!-- /wp:post-template -->
 
@@ -32,7 +86,7 @@
 
 <!-- wp:query-no-results -->
 <!-- wp:paragraph {"placeholder":"Añade texto o bloques que se mostrarán cuando la consulta no devuelva ningún resultado."} -->
-<p></p>
+<p>Todavía no hay publicaciones de este colaborador</p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results --></div>
 <!-- /wp:query -->
@@ -42,4 +96,4 @@
 <!-- /wp:spacer --></main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"mt-0"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"coontigos","tagName":"footer","className":"mt-0"} /-->

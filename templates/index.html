@@ -1,26 +1,56 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"Hero"},"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-10"}}},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|60"},"padding":{"top":"14rem","bottom":"var:preset|spacing|80"},"blockGap":"var:preset|spacing|10"}},"textColor":"neutral-10","layout":{"type":"constrained"}} -->
-<section id="hero" class="wp-block-group has-neutral-10-color has-text-color has-link-color" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--60);padding-top:14rem;padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:site-title {"level":0,"isLink":false,"style":{"typography":{"textTransform":"uppercase"}}} /-->
-
-<!-- wp:heading {"level":1,"fontSize":"display"} -->
-<h1 class="wp-block-heading has-display-font-size">Blog</h1>
-<!-- /wp:heading -->
-
-<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"layout":{"type":"constrained"}} -->
+<!-- wp:cover {"url":"https://coontigos.com/wp-content/uploads/terapias-hero-1024x576.jpg","id":750,"dimRatio":50,"overlayColor":"primary-100","isUserOverlayColor":true,"minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","sizeSlug":"large","align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}},"spacing":{"margin":{"top":"0"},"padding":{"right":"0","left":"0"}}},"textColor":"foreground","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover alignfull has-foreground-color has-text-color has-link-color" style="margin-top:0;padding-right:0;padding-left:0;min-height:100vh" id="hero"><img class="wp-block-cover__image-background wp-image-750 size-large" alt="" src="https://coontigos.com/wp-content/uploads/terapias-hero-1024x576.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-primary-100-background-color has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10","padding":{"right":"0","left":"0"}}},"layout":{"type":"constrained","contentSize":"696px","justifyContent":"left"}} -->
+<div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:group {"metadata":{"name":"Breadcrumbs"},"layout":{"type":"constrained"}} -->
 <div id="breadcrumbs" class="wp-block-group"><!-- wp:shortcode -->
 [rank_math_breadcrumb]
 <!-- /wp:shortcode --></div>
-<!-- /wp:group --></section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"style":{"spacing":{"margin":{"top":"0"}}},"layout":{"type":"default"}} -->
-<main class="wp-block-group" style="margin-top:0"><!-- wp:group {"metadata":{"name":"Categorías"},"backgroundColor":"primary-90","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-primary-90-background-color has-background"><!-- wp:categories {"showOnlyTopLevel":true} /--></div>
+<!-- wp:heading {"level":1,"metadata":{"name":"Title"},"style":{"typography":{"fontStyle":"normal","fontWeight":"200"}},"fontSize":"heading-1"} -->
+<h1 class="wp-block-heading has-heading-1-font-size" style="font-style:normal;font-weight:200">Un blog diferente para bienestar y bienvivir</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Un blog para aprender sobre salud, para que puedas descubrir otros Coontigos desde los que aun no te has sentido.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:spacer {"height":"32px","className":"hidden-mobile"} -->
+<div style="height:32px" aria-hidden="true" class="wp-block-spacer hidden-mobile"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:image {"lightbox":{"enabled":false},"id":182,"sizeSlug":"large","linkDestination":"custom"} -->
+<figure class="wp-block-image size-large"><a href="#filtrar-por"><img src="https://coontigos.com/wp-content/uploads/icon-arrow-down-circle.svg" alt="" class="wp-image-182"/></a></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group --></div></div>
+<!-- /wp:cover -->
+
+<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"gradient":"blue-gradient-reverse","layout":{"type":"constrained"}} -->
+<main class="wp-block-group has-blue-gradient-reverse-gradient-background has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10)"><!-- wp:group {"metadata":{"name":"Categories"},"layout":{"type":"constrained"}} -->
+<div id="filtrar-por" class="wp-block-group"><!-- wp:separator {"className":"is-style-wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"backgroundColor":"secondary-transparent"} -->
+<hr class="wp-block-separator has-text-color has-secondary-transparent-color has-alpha-channel-opacity has-secondary-transparent-background-color has-background is-style-wide" style="margin-top:var(--wp--preset--spacing--40)"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"className":"toggle-filter-by"} -->
+<p class="toggle-filter-by"><strong>Filtrar por</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"filter-by","layout":{"type":"constrained"}} -->
+<div class="wp-block-group filter-by"><!-- wp:categories {"showOnlyTopLevel":true} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:query {"queryId":16,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":true,"taxQuery":null,"parents":[],"format":[]},"layout":{"type":"constrained"}} -->
-<div class="wp-block-query"><!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:separator {"className":"is-style-wide","backgroundColor":"secondary-transparent"} -->
+<hr class="wp-block-separator has-text-color has-secondary-transparent-color has-alpha-channel-opacity has-secondary-transparent-background-color has-background is-style-wide"/>
+<!-- /wp:separator --></div>
+<!-- /wp:group -->
+
+<!-- wp:spacer {"height":"8px","className":"hidden-mobile"} -->
+<div style="height:8px" aria-hidden="true" class="wp-block-spacer hidden-mobile"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:query {"queryId":16,"query":{"perPage":12,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":true,"taxQuery":null,"parents":[],"format":[]},"layout":{"type":"constrained"}} -->
+<div class="wp-block-query"><!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"20rem"}} -->
 <!-- wp:block {"ref":831} /-->
 <!-- /wp:post-template -->
 

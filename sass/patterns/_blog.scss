@@ -96,3 +96,14 @@
     }
 
 }
+
+.bio-user-extend .value {
+
+    p:first-child {
+        margin-top: 0;
+    }
+}
+
+.archive.author .wp-block-avatar__image {
+    border-radius: 999px;
+}
