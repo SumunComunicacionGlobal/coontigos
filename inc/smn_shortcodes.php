@@ -43,7 +43,7 @@ add_shortcode('acf_author_linkedin', function($atts) {
 add_shortcode('acf_editors_cards', function($atts) {
     $args = array(
         'role'    => 'author',
-        'orderby' => 'display_name',
+        'orderby' => 'post_count',
         'order'   => 'DESC',
         'fields'  => 'all'
     );
@@ -91,8 +91,8 @@ add_shortcode('acf_users_for_tratamiento', function($atts) {
                 'compare' => 'LIKE'
             ]
         ],
-        'orderby' => 'display_name',
-        'order'   => 'ASC'
+        'orderby' => 'post_count',
+        'order'   => 'DESC'
     ]);
     $users = $user_query->get_results();
 
