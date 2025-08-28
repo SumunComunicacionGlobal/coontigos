@@ -41,8 +41,16 @@ add_shortcode('acf_author_linkedin', function($atts) {
 
 
 add_shortcode('acf_editors_cards', function($atts) {
+    // Atributos por defecto
+    $atts = shortcode_atts([
+        'role' => 'author', // valor por defecto
+    ], $atts, 'acf_editors_cards');
+
+    // Permitir varios roles separados por coma
+    $roles = array_map('trim', explode(',', $atts['role']));
+
     $args = array(
-        'role'    => 'author',
+        'role__in' => $roles,
         'orderby' => 'post_count',
         'order'   => 'DESC',
         'fields'  => 'all'
@@ -65,7 +73,7 @@ add_shortcode('acf_editors_cards', function($atts) {
             <div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
                 <div class="wp-block-group has-foreground-color has-secondary-transparent-background-color has-text-color has-background has-link-color" style="border-radius:8px;padding:0.8rem;">
                     <p class="has-text-align-left">' . $name . '</p>
-                    <p class="has-small-font-size">Psicólogo Colegiado nº ' . esc_html($number) . '</p>
+                    <p class="has-small-font-size">' . esc_html($number) . '</p>
                     <a class="author-profile-link" href="' . esc_url($profile_url) . '">Ver perfil</a>
                 </div>
             </div>
@@ -83,6 +91,7 @@ add_shortcode('acf_users_for_tratamiento', function($atts) {
     global $post;
     if (!$post || empty($post->ID)) return '';
 
+    // Obtener todos los usuarios que tengan este tratamiento relacionado
     $user_query = new WP_User_Query([
         'meta_query' => [
             [
@@ -98,8 +107,25 @@ add_shortcode('acf_users_for_tratamiento', function($atts) {
 
     if (empty($users)) return '<p>No hay profesionales asignados a este tratamiento.</p>';
 
-    $output = '<div class="wp-block-group is-style-group-horizontal-scroll cards-team">';
+    // Ordenar: primero autores, luego colaboradores
+    $ordered_roles = ['author', 'contributor'];
+    $sorted_users = [];
+    foreach ($ordered_roles as $role) {
+        foreach ($users as $user) {
+            if (in_array($role, (array) $user->roles)) {
+                $sorted_users[$user->ID] = $user;
+            }
+        }
+    }
+    // Añadir cualquier usuario que no sea author ni contributor al final
     foreach ($users as $user) {
+        if (!isset($sorted_users[$user->ID])) {
+            $sorted_users[$user->ID] = $user;
+        }
+    }
+
+    $output = '<div class="wp-block-group is-style-group-horizontal-scroll cards-team">';
+    foreach ($sorted_users as $user) {
         $avatar_url = get_avatar_url($user->ID, ['size' => 280]);
         $avatar = '<img src="' . esc_url($avatar_url) . '" alt="' . esc_attr($user->display_name) . '" class="wp-block-cover__image-background" style="width:100%;height:auto;object-fit:cover;border-radius:32px;">';
         $name = esc_html($user->display_name);
@@ -113,7 +139,7 @@ add_shortcode('acf_users_for_tratamiento', function($atts) {
             <div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
                 <div class="wp-block-group has-foreground-color has-secondary-transparent-background-color has-text-color has-background has-link-color" style="border-radius:8px;padding:0.8rem;">
                     <p class="has-text-align-left">' . $name . '</p>
-                    <p class="has-small-font-size">Psicólogo Colegiado nº ' . esc_html($number) . '</p>
+                    <p class="has-small-font-size">' . esc_html($number) . '</p>
                     <a class="author-profile-link" href="' . esc_url($profile_url) . '">Ver perfil</a>
                 </div>
             </div>
