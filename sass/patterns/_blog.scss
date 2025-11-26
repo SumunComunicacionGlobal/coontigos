@@ -104,6 +104,12 @@
     }
 }
 
-.archive.author .wp-block-avatar__image {
+.wp-block-avatar__image {
     border-radius: 999px;
+}
+
+.single .wp-block-post-content {
+    a {
+        color: var(--wp--preset--color--secondary);
+    }
 }
